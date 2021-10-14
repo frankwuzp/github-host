@@ -3,16 +3,17 @@
 # -*- encoding: utf-8 -*-
 '''
 @Author  :   liuyuqi
-@Contact :   liuyuqi.gov@msn.cn
-@Time    :   2020/04/26 23:01:40
-@Version :   1.0
+@Editor  :   frankwuzp
+@Contact :   me@wuzhiping.top
+@Time    :   2021/10/14 23:01:40
+@Version :   1.1
 @License :   Copyright © 2017-2020 liuyuqi. All Rights Reserved.
 @Desc    :   github.com
 '''
 
 import shutil
 import os,sys,ctypes
-import datetime
+from datetime import datetime, timezone, timedelta
 import get_ip_utils
 import platform
 
@@ -58,7 +59,16 @@ sites = [
     "api.github.com",
     "live.github.com",
     "githubapp.com",
-    "github.com"
+    "github.com",
+    "github.dev",
+    "central.github.com",
+    "alive.github.com",
+    "desktop.githubusercontent.com",
+    "github.blog",
+    "github.io",
+    "github.map.fastly.net",
+    "media.githubusercontent.com",
+    "raw.githubusercontent.com"
 ]
 
 addr2ip = {}
@@ -77,7 +87,9 @@ def dropDuplication(line):
 
 # 更新host, 并刷新本地DNS
 def updateHost():
-    today = datetime.date.today()
+    # today = datetime.date.today()
+    update_time = datetime.utcnow().astimezone(
+        timezone(timedelta(hours=8))).replace(microsecond=0).isoformat()
     for site in sites:
         trueip=get_ip_utils.getIpFromipapi(site)
         if trueip != None:
@@ -89,8 +101,8 @@ def updateHost():
             for line in f1_lines:                       # 为了防止 host 越写用越长，需要删除之前更新的含有github相关内容
                 if dropDuplication(line) == False:
                     f2.write(line)
-            f2.write("#*********************github " +
-                     str(today) + " update********************\n")
+            f2.write("#**********github " +
+                     update_time + " update**********\n")
             f2.write("#******* get latest hosts: http://blog.yoqi.me/lyq/16489.html\n")
             for key in addr2ip:
                 f2.write(addr2ip[key] + "\t" + key + "\n")

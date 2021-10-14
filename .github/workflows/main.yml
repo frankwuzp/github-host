@@ -2,9 +2,9 @@ name: auto CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
   - cron: "0 2 * * *"
 
@@ -42,7 +42,7 @@ jobs:
       - name: Push to built branch
         uses: Automattic/action-commit-to-branch@master
         with:
-          branch: 'master'
-          commit_message: 'Update Host'
+          branch: 'main'
+          commit_message: '🚀 update hosts'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
