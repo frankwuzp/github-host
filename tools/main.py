@@ -104,8 +104,8 @@ def updateHost():
             f2.write("#**********github " +
                      update_time + " update**********\n")
             # f2.write("#******* get latest hosts: http://blog.yoqi.me/lyq/16489.html\n")
-            f2.write("#******* get latest hosts: https://raw.githubusercontent.com/frankwuzp/github-host/main/hosts")
-            f2.write("#******* mirror: https://gitee.com/frankwuzp/github-host/raw/main/hosts")
+            f2.write("#******* get latest hosts: https://raw.githubusercontent.com/frankwuzp/github-host/main/hosts\n")
+            f2.write("#******* mirror: https://gitee.com/frankwuzp/github-host/raw/main/hosts\n")
             for key in addr2ip:
                 f2.write(addr2ip[key] + "\t" + key + "\n")
     os.remove(hostLocation)

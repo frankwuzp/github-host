@@ -2,8 +2,8 @@
 
 ## 快速访问
 
-Github 站点：`https://raw.githubusercontent.com/frankwuzp/github-host/main/hosts`
-Gitee 国内镜像：`https://gitee.com/frankwuzp/github-host/raw/main/hosts`
+- Github 站点：`https://raw.githubusercontent.com/frankwuzp/github-host/main/hosts`
+- Gitee 国内镜像：`https://gitee.com/frankwuzp/github-host/raw/main/hosts`
 
 ## 墙介绍
 
@@ -41,5 +41,6 @@ github 子域名非常多，服务器非常多，墙是动态的。所以需要�
 
 2. `hosts` 文件增加显示北京时间。
 3. 同步镜像文件到 [Gitee](https://gitee.com/frankwuzp/github-host) 仓库，输入以下网址可直达查看：
-   `https://gitee.com/frankwuzp/github-host/raw/main/hosts`
+   
+`https://gitee.com/frankwuzp/github-host/raw/main/hosts`
 
