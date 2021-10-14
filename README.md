@@ -16,4 +16,23 @@ DNS污染则无法通过域名直接访问，一种方法就是修改DNS，这�
 
 github 子域名非常多，服务器非常多，墙是动态的。所以需要不断更新 hosts 来解决无法访问问题。
 
+## 迭代记录
+
+**211014 14:24 [frankwuzp](https://github.com/frankwuzp) 增加两点功能**
+
+1. 增加更多相关网址，具体如下：
+
+```txt
+    "github.dev",
+    "central.github.com",
+    "alive.github.com",
+    "desktop.githubusercontent.com",
+    "github.blog",
+    "github.io",
+    "github.map.fastly.net",
+    "media.githubusercontent.com",
+    "raw.githubusercontent.com"
+```
+
+2. `hosts` 文件增加显示北京时间。
 
