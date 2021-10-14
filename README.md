@@ -18,7 +18,7 @@ github 子域名非常多，服务器非常多，墙是动态的。所以需要�
 
 ## 迭代记录
 
-**211014 14:24 [frankwuzp](https://github.com/frankwuzp) 增加两点功能**
+**211014 14:24 [frankwuzp](https://github.com/frankwuzp) 增加三点功能**
 
 1. 增加更多相关网址，具体如下：
 
@@ -35,4 +35,5 @@ github 子域名非常多，服务器非常多，墙是动态的。所以需要�
 ```
 
 2. `hosts` 文件增加显示北京时间。
+3. 同步镜像文件到 [Gitee](https://gitee.com/frankwuzp/github-host) 仓库。
 

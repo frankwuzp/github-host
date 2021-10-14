@@ -46,3 +46,14 @@ jobs:
           commit_message: '🚀 update hosts'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  git_mirror:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:frankwuzp/github-host.git'
+          destination-repo: 'git@gitee.com:frankwuzp/github-host.git'
