@@ -51,9 +51,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: pixta-dev/repository-mirroring-action@v1
+      - uses: Yikun/hub-mirror-action@master
         with:
-          target_repo_url:
-            git@gitee.com:frankwuzp/github-host.git
-          ssh_private_key:                              # <-- use 'secrets' to pass credential information.
-            ${{ secrets.GITEE_PRIVATE_KEY }}
+          src: github/frankwuzp
+          dst: gitee/frankwuzp
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: user
+          static_list: "github-host"
+          # src_account_type: org
+          # dst_account_type: org
